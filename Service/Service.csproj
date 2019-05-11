@@ -7,10 +7,11 @@
 
   <ItemGroup>
     <PackageReference Include="MagicOnion" Version="2.0.5" />
+    <Compile Include="..\UnityResearch\Assets\Scripts\ApiDefinitions\*.cs" LinkBase="ApiDefinitions" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)..\Externals\MagicOnionCodeGenerator\win-x64\moc.exe -i $(SolutionDir)..\Service\Service.csproj -n UnityResearch -o $(SolutionDir)..\UnityResearch\Assets\Scripts\Generated\MagicOnion.Generated.cs&#xD;&#xA;$(SolutionDir)..\Externals\MessagePackUniversalCodeGenerator\win-x64\mpc.exe -i $(SolutionDir)..\Service\Service.csproj -o $(SolutionDir)..\UnityResearch\Assets\Scripts\Generated\MessagePack.Generated.cs&#xD;&#xA;xcopy $(SolutionDir)..\Service\ApiDefinitions $(SolutionDir)..\UnityResearch\Assets\Scripts\Generated\ApiDefinitions\  /I/Y" />
+    <Exec Command="$(SolutionDir)..\Externals\MagicOnionCodeGenerator\win-x64\moc.exe -i $(SolutionDir)..\Service\Service.csproj -n UnityResearch -o $(SolutionDir)..\UnityResearch\Assets\Scripts\Generated\MagicOnion.Generated.cs&#xD;&#xA;$(SolutionDir)..\Externals\MessagePackUniversalCodeGenerator\win-x64\mpc.exe -i $(SolutionDir)..\Service\Service.csproj -o $(SolutionDir)..\UnityResearch\Assets\Scripts\Generated\MessagePack.Generated.cs&#xD;&#xA;" />
   </Target>
-
+  
 </Project>
