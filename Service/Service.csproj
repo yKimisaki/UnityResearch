@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MagicOnion" Version="2.0.5" />
+    <PackageReference Include="MagicOnion" Version="2.1.0" />
     <Compile Include="..\UnityResearch\Assets\Scripts\ApiDefinitions\*.cs" LinkBase="ApiDefinitions" />
   </ItemGroup>
 

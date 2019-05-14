@@ -139,17 +139,17 @@ namespace UnityResearch.Service.ApiDefinitions {
             return __fireAndForgetClient;
         }
 
-        protected override Task OnBroadcastEvent(int methodId, ArraySegment<byte> data)
+        protected override void OnBroadcastEvent(int methodId, ArraySegment<byte> data)
         {
             switch (methodId)
             {
                 case 919260368: // OnReceiveMessageAsync
                 {
                     var result = LZ4MessagePackSerializer.Deserialize<string>(data, resolver);
-                    return receiver.OnReceiveMessageAsync(result);
+                    receiver.OnReceiveMessageAsync(result); break;
                 }
                 default:
-                    return Task.CompletedTask;
+                    break;
             }
         }
 
